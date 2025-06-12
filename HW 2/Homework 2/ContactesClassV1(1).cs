@@ -1,18 +1,4 @@
-﻿
-//Console.Write("Introduzca el primer numero: ");
-//int num1 = Convert.ToInt32(Console.ReadLine());
-
-//if (num1 % 2 == 0)
-//{
-//    Console.WriteLine("El numero es par!");
-//} else
-//{
-//    Console.WriteLine("El numero es impar");
-//}
-
-
-
-Console.WriteLine("Bienvenido a mi lista de Contactes");
+﻿Console.WriteLine("Bienvenido a mi lista de Contactes");
 
 
 //names, lastnames, addresses, telephones, emails, ages, bestfriend
@@ -79,10 +65,10 @@ while (runing)
                 Console.WriteLine($"____________________________________________________________________________________________________________________________");
                 foreach (var id in ids)
                 {
-                    var isBestFriend = bestFriends[id];
+                    var isBestFriend  = bestFriends[id];
 
                     //string isBestFriendStr;
-
+                     
                     //if (isBestFriend == true)
                     //{
                     //    isBestFriendStr = "Si";
@@ -98,8 +84,8 @@ while (runing)
             }
             break;
         case 3: //search
-            {
-
+            { 
+            
             }
             break;
         case 4: //modify
