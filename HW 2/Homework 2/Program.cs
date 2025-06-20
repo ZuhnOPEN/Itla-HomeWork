@@ -1,5 +1,5 @@
 ﻿
-Console.Write("Introduzca el primer numero: ");
+Console.WriteLine("Introduzca el primer numero: ");
 int num1 = Convert.ToInt32(Console.ReadLine());
 
 if (num1 % 2 == 0)
