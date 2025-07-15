@@ -1,5 +1,5 @@
 ﻿using System.Linq;
-using fuckfuck.puta;
+using magicagenda.agenda;
 
 
 int option = 0;
