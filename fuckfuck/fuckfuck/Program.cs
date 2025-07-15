@@ -31,7 +31,11 @@ do
             data.viewContacts();
             break;
 
-        
+        case 3: data.editContact(); 
+            break;
+
+        case 5: data.searchContact();
+            break;
 
 
 

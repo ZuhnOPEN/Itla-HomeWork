@@ -52,9 +52,45 @@ namespace fuckfuck.puta
 
             for (int i = 0; i < ids.Count; i++)
             {
+                Console.WriteLine("╔════════════╦════════════════════╦══════════════════════╦══════════════════════");
                 Console.WriteLine($"ID {ids[i]} ║ Nombre: {name[i]}, ║ Numero: {number[i]}, ║ Telefono: {phone[i]}");
             }
+        }
+
+        public void editContact()
+        {
+            Console.Write("Introduce el ID a editar: ");
+            int idtoedit = Convert.ToInt32(Console.ReadLine());
+            int index = ids.IndexOf(idtoedit);
+
+            if (index != -1)
+            {
+                Console.WriteLine($"Contacto actual:ID: {ids[index]}, ║ Nombre: {name[index]}, ║ Telefono: {phone[index]}, ║ Numero: {number[index]} ");
+
+                Console.WriteLine("Introduce el nuevo nombre: ");
+                name[index] = Console.ReadLine();
+
+                Console.WriteLine("Introduce el nuevo telefono: ");
+                phone[index] = Console.ReadLine();
+
+                Console.WriteLine("Edite el numero: ");
+                number[index] = Convert.ToInt32(Console.ReadLine());
+            }
+        }
+
+            public void searchContact()
+        {
+            Console.Write("Introduce el id a buscar");
+
+                int searchID = Convert.ToInt32(Console.ReadLine());
+                int idex = ids.IndexOf(searchID);
+
+            if (idex != -1) {
+                Console.WriteLine($"ID: {ids[idex]} ║ Nombre: {name[idex]} ║ Telefono: {phone[idex]} ║ Numero: {number[idex]} ");
+            }
+        }
+        }
 
         }
-        }        
-    }
+        
+        
