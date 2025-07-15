@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection;
 using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
@@ -78,19 +79,50 @@ namespace fuckfuck.puta
             }
         }
 
-            public void searchContact()
+        public void searchContact()
         {
             Console.Write("Introduce el id a buscar");
 
-                int searchID = Convert.ToInt32(Console.ReadLine());
-                int idex = ids.IndexOf(searchID);
+            int searchID = Convert.ToInt32(Console.ReadLine());
+            int idex = ids.IndexOf(searchID);
 
-            if (idex != -1) {
+            if (idex != -1)
+            {
                 Console.WriteLine($"ID: {ids[idex]} ║ Nombre: {name[idex]} ║ Telefono: {phone[idex]} ║ Numero: {number[idex]} ");
             }
         }
+
+            public void deleteContact()
+        {
+            Console.Write("Introduce el id a borrar: ");
+            int delID = Convert.ToInt32(Console.ReadLine());
+            int delete = ids.IndexOf(delID);
+
+            if (delete != -1) {
+                Console.WriteLine($"Contacto a eliminar:ID: {ids[delete]}, ║ Nombre: {name[delete]}, ║ Telefono: {phone[delete]}, ║ Numero: {number[delete]} ");
+
+                Console.WriteLine("Desea eliminar a este contacto?");
+                Console.WriteLine("1. Si 2. No");
+                int decide = Convert.ToInt32(Console.ReadLine());
+
+                if (decide != 1)
+                {
+                    ids.Remove(delete);
+                    name.RemoveAt(delete);
+                    phone.RemoveAt(delete);
+                    number.Remove(delete);
+
+                    Console.WriteLine("El contacto ha sido eliminado");
+                } else
+                {
+                    Console.WriteLine("No se ha eliminado el contacto");
+                }
+
+            }
+        }
+        }
         }
 
-        }
+        
         
         

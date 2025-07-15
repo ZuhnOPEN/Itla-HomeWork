@@ -34,6 +34,9 @@ do
         case 3: data.editContact(); 
             break;
 
+        case 4: data.deleteContact(); 
+            break;
+
         case 5: data.searchContact();
             break;
 
