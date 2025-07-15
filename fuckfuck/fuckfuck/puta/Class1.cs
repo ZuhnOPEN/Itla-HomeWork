@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -13,37 +14,47 @@ namespace fuckfuck.puta
         public List<int> ids { get; set; }
         public List<int> number { get; set; }
 
+
+        public Data()
+        {
+            name = new List<string>();
+            phone = new List<string>();
+            ids = new List<int>();
+            number = new List<int>();
+        }
+
         public void addContact()
         {
-            Data data = new Data();
 
-            data.name = new List<string>();
-            data.phone = new List<string>();
-            data.number = new List<int>();
-            data.ids = new List<int>();
+            Console.Write("Introduce tu nombre: ");
+            name.Add(Console.ReadLine());
 
-            Console.WriteLine("Introduce tu nombre");
-            data.name.Add(Console.ReadLine());
+            Console.Write("Introduce tu numero telefonico: ");
+            phone.Add(Console.ReadLine());
 
-            Console.WriteLine("Introduce tu numero telefonico: ");
-            data.phone.Add(Console.ReadLine());
-
-            int countIDS = data.ids.Count + 1;
-            data.ids.Add(countIDS);
+            int countIDS = ids.Count + 1;
+            ids.Add(countIDS);
 
             Console.WriteLine("Introduce un numero: ");
-            data.number.Add(Convert.ToInt32(Console.ReadLine()));
-            
-            
+            number.Add(Convert.ToInt32(Console.ReadLine()));
+
+
         }
 
 
-        public void viewContacts(Data data)
+        public void viewContacts()
         {
-            for (int i = 0; i < data.ids.Count; i++)
+
+            if (ids.Count == 0)
             {
-                Console.WriteLine($"ID {data.ids} - Nombre: {data.name}, - Numero: {data.number}, -Telefono: {data.phone}");
+                Console.WriteLine("No guarda na");
             }
+
+            for (int i = 0; i < ids.Count; i++)
+            {
+                Console.WriteLine($"ID {ids[i]} ║ Nombre: {name[i]}, ║ Numero: {number[i]}, ║ Telefono: {phone[i]}");
+            }
+
         }
-        }
+        }        
     }
