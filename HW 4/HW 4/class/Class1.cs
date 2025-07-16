@@ -107,10 +107,10 @@ namespace magicagenda.agenda
 
                 if (decide != 1)
                 {
-                    ids.Remove(delete);
+                    ids.RemoveAt(delete);
                     name.RemoveAt(delete);
                     phone.RemoveAt(delete);
-                    number.Remove(delete);
+                    number.RemoveAt(delete);
 
                     Console.WriteLine("El contacto ha sido eliminado");
                 } else
