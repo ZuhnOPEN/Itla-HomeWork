@@ -105,7 +105,7 @@ namespace magicagenda.agenda
                 Console.WriteLine("1. Si 2. No");
                 int decide = Convert.ToInt32(Console.ReadLine());
 
-                if (decide != 1)
+                if (decide == 1)
                 {
                     ids.RemoveAt(delete);
                     name.RemoveAt(delete);
