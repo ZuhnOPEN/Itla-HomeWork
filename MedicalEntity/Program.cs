@@ -120,6 +120,9 @@ class program
 
                             var delUser = new user() { Id = delID};
 
+                            Console.WriteLine("Deseas borrar este usuario?");
+                            int decide = Convert.ToInt32(Console.ReadLine());
+
                             if (decide == 1)
                             {
                                 using (var delete = new userContext())
