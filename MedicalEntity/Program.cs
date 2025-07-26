@@ -38,10 +38,8 @@ class program
                             Console.WriteLine("Escribe tu numero de telefono");
                             string numero = Convert.ToString(Console.ReadLine());
 
-                            Console.WriteLine("Es tu mejor amigo? ");
-                            bool bestie = Convert.ToBoolean(Console.ReadLine());
 
-                            var usr1 = new user() { Name = fname, Cedula = addCedula, lastName = lname, Email = correo, Numero = numero, bestFriend = bestie };
+                            var usr1 = new user() { Name = fname, Cedula = addCedula, lastName = lname, Email = correo, Numero = numero};
 
                             context.users.Add(usr1);
                             context.SaveChanges();
@@ -58,7 +56,7 @@ class program
                                 foreach (var u in context.users)
                                 {
                                     Console.WriteLine("════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════");
-                                    Console.WriteLine($"ID: {u.Id} | Nombre: {u.Name}  | Cedula: {u.Cedula} | Apellido: {u.lastName} | Correo: {u.Email} | Telefono: {u.Numero} | Es tu mejor amigo? {u.bestFriend}");
+                                    Console.WriteLine($"ID: {u.Id} | Nombre: {u.Name}  | Cedula: {u.Cedula} | Apellido: {u.lastName} | Correo: {u.Email} | Telefono: {u.Numero}");
                                     Console.WriteLine("════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════");
 
                                 }
@@ -85,10 +83,8 @@ class program
                                 Console.WriteLine("Edita el numero telefonico del usuario: ");
                                 string editNumb = Convert.ToString(Console.ReadLine());
 
-                                Console.WriteLine("Cambia la relacion entre el usuario y tu");
-                                bool editFriend = Convert.ToBoolean(Console.ReadLine());
 
-                                var usrEdit = new user() {Id = id, Name = editName, lastName = editApellido, Email = editEmail, Numero = editNumb, bestFriend = editFriend };
+                                var usrEdit = new user() {Id = id, Name = editName, lastName = editApellido, Email = editEmail, Numero = editNumb };
 
                                 context.UpdateRange(usrEdit);
                                 context.SaveChanges();
@@ -104,9 +100,9 @@ class program
                             using (var search = new userContext())
                             {
                                var found = search.users.Find(searchID);
-                                Console.WriteLine("═════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════");
-                                Console.WriteLine($"ID: {found.Id} | Nombre: {found.Name} | Cedula: {found.Cedula} | Apellido {found.lastName} | Correo: {found.Email} | Numero: {found.Numero} | Estado: {found.bestFriend}");
-                                Console.WriteLine("═════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════");
+                                Console.WriteLine("═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════");
+                                Console.WriteLine($"ID: {found.Id} | Nombre: {found.Name} | Cedula: {found.Cedula} | Apellido {found.lastName} | Correo: {found.Email} | Numero: {found.Numero}");
+                                Console.WriteLine("═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════");
 
                             }
                         }
@@ -120,8 +116,17 @@ class program
 
                             var delUser = new user() { Id = delID};
 
+                            using (var searchDel = new userContext())
+                            {
+                                var del = searchDel.users.Find(delID);
+                                Console.WriteLine($"ID {del.Id} | Nombre: {del.Name} | Cedula: {del.Cedula} | Apellido: {del.lastName} | Email: {del.Email} | Numero: {del.Numero}");
+                            }
+
                             Console.WriteLine("Deseas borrar este usuario?");
+                            Console.WriteLine("1. Si 2. No");
                             int decide = Convert.ToInt32(Console.ReadLine());
+
+                        
 
                             if (decide == 1)
                             {
@@ -129,6 +134,7 @@ class program
                                 { 
                                     delete.Remove<user>(delUser);
                                     delete.SaveChanges();
+                                    Console.WriteLine("Se ha borrado el usuario correctamente");
                                 }
                             }
                             else

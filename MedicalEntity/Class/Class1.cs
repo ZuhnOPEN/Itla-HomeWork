@@ -17,7 +17,6 @@ namespace EntityProyect.Class
         public string Email { get; set; }
         public string lastName { get; set; }
         public string Numero { get; set; }
-        public bool bestFriend { get; set; }
 
     }
 
