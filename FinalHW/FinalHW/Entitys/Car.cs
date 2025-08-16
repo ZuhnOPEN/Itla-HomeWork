@@ -1,4 +1,5 @@
-﻿using System;
+﻿using FinalHW.Entitys;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,12 +9,17 @@ namespace FinalHW.Class
 {
     public class Car
     {
-        public int carID { get; set; }
-        public string typeOfCar { get; set; }
-        public string carBrand { get; set; }
-        public string drivenBy { get; set; }
-        public string mileage { get; set; }
+        public int ID { get; set; }
+        public string Plaque { get; set; }
+        public string Amount { get; set; }
+        public string State { get; set; }
 
-        public Driver driver { get; set; }
+        //fk de ruta
+        public Routes Rutas { get; set; }
+        public int? Route { get; set; }
+
+        //Chofer asignado al auto
+        public int? driverID { get; set; }
+        public Driver Driver { get; set; }
     }
 }
