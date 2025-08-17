@@ -22,8 +22,9 @@ namespace FinalHW.View
             Console.WriteLine("3. Buscar Ruta");
             Console.WriteLine("4. Eliminar Ruta");
             Console.WriteLine("5. Añadir Conductor a Ruta");
+                Console.WriteLine("6. Salir");
 
-            string select = Convert.ToString(Console.ReadLine());
+                string select = Convert.ToString(Console.ReadLine());
             switch (select)
             {
                 case "1":

@@ -16,9 +16,9 @@ namespace FinalHW.Class
         public string State { get; set; }
 
         //fk de ruta
+        [ForeignKey("Rutas")]
+        public int RutasRouteID { get; set; }
         public Routes Rutas { get; set; }
-    
-        public int? RouteID { get; set; }
 
         //Chofer asignado al auto
         public int? driverID { get; set; }

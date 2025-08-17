@@ -18,6 +18,7 @@ namespace FinalHW.Controllers
             {
                 car.Database.EnsureCreated();
 
+                // Si no hay rutas, agrégalas y guarda para obtener los IDs generados
                 if (!car.Rutas.Any())
                 {
                     car.Rutas.Add(new Routes { Nombre = "Ruta 1", Distancia = 10.5, estimedTime = TimeSpan.FromMinutes(30) });
@@ -37,7 +38,7 @@ namespace FinalHW.Controllers
                 Console.WriteLine("Introduce el estado del auto: ");
                 string state = Console.ReadLine();
 
-                // Mostrar rutas disponibles
+                // Mostrar rutas disponibles con IDs reales
                 Console.WriteLine("Rutas disponibles:");
                 var rutasDisponibles = car.Rutas.ToList();
                 foreach (var ruta in rutasDisponibles)
@@ -56,7 +57,7 @@ namespace FinalHW.Controllers
                     Plaque = plaque,
                     Amount = amount.ToString(), // Si cambias el modelo a int, usa Amount = amount
                     State = state,
-                    RouteID = routeId
+                    RutasRouteID = routeId
                 };
 
                 car.Cars.Add(newCar);

@@ -12,8 +12,10 @@ namespace FinalHW.Controllers
     {
         public static void AddMantainment()
         {
-            using (var db = new dbContext())
+            using (var add = new dbContext())
             {
+                add.Database.EnsureCreated();
+
                 Console.Write("Fecha (yyyy-MM-dd): ");
                 DateTime fecha = DateTime.Parse(Console.ReadLine());
 
@@ -30,8 +32,8 @@ namespace FinalHW.Controllers
                     CarId = carId
                 };
 
-                db.CarMantainments.Add(mantainment);
-                db.SaveChanges();
+                add.CarMantainment.Add(mantainment);  // Corregido aquí
+                add.SaveChanges();
                 Console.WriteLine("Mantenimiento añadido correctamente.");
             }
         }
@@ -40,8 +42,7 @@ namespace FinalHW.Controllers
         {
             using (var db = new dbContext())
             {
-                var mantainments = db.CarMantainments.ToList();
-                foreach (var m in mantainments)
+                foreach (var m in db.CarMantainment)
                 {
                     Console.WriteLine($"ID: {m.MantainmentId}, Fecha: {m.Fecha:yyyy-MM-dd}, Descripción: {m.Descripcion}, AutoID: {m.CarId}");
                 }
@@ -54,7 +55,7 @@ namespace FinalHW.Controllers
             {
                 Console.Write("ID de mantenimiento a editar: ");
                 int id = int.Parse(Console.ReadLine());
-                var mantainment = db.CarMantainments.Find(id);
+                var mantainment = db.CarMantainment.Find(id);
                 if (mantainment != null)
                 {
                     Console.Write("Nueva fecha (yyyy-MM-dd): ");
@@ -79,10 +80,10 @@ namespace FinalHW.Controllers
             {
                 Console.Write("ID de mantenimiento a eliminar: ");
                 int id = int.Parse(Console.ReadLine());
-                var mantainment = db.CarMantainments.Find(id);
+                var mantainment = db.CarMantainment.Find(id);
                 if (mantainment != null)
                 {
-                    db.CarMantainments.Remove(mantainment);
+                    db.CarMantainment.Remove(mantainment);
                     db.SaveChanges();
                     Console.WriteLine("Mantenimiento eliminado.");
                 }

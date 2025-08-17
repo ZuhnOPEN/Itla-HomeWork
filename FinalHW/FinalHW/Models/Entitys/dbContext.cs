@@ -15,7 +15,7 @@ namespace FinalHW.Class
         public DbSet<Car> Cars { get; set; }
         public DbSet<Horario> Horarios { get; set; }
 
-        public DbSet<carMantainment> CarMantainments { get; set; }
+        public DbSet<carMantainment> CarMantainment { get; set; }  
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
@@ -38,6 +38,12 @@ namespace FinalHW.Class
                     .HasMany(r => r.Horarios)
                     .WithMany(h => h.Rutas)
                     .UsingEntity(j => j.ToTable("RouteHorario"));
+
+           modelBuilder.Entity<Car>()
+                    .HasOne(c => c.Rutas)
+                    .WithMany()
+                    .HasForeignKey(c => c.RutasRouteID)
+                    .OnDelete(DeleteBehavior.Restrict);
 
         } 
     }
