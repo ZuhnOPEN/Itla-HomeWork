@@ -1,6 +1,7 @@
 ﻿using FinalHW.Entitys;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -16,7 +17,8 @@ namespace FinalHW.Class
 
         //fk de ruta
         public Routes Rutas { get; set; }
-        public int? Route { get; set; }
+    
+        public int? RouteID { get; set; }
 
         //Chofer asignado al auto
         public int? driverID { get; set; }

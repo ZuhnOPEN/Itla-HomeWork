@@ -1,117 +1,75 @@
 ﻿using Figgle.Fonts;
 using FinalHW.Controllers;
+using FinalHW.View;
+using Microsoft.EntityFrameworkCore.Metadata.Internal;
 
 public class Program
 {
     public static void Main(string[] args)
     {
         string option;
-        bool salir = false;
-        while(!salir)
-        {
-            Console.Clear();
+    
+    
             Console.WriteLine(FiggleFonts.Standard.Render("Menu"));
 
             Console.WriteLine("1. Gestion de conductores");
-            Console.WriteLine("2. Gestion de Rutas");
-            Console.WriteLine("3. Gestion de Autos");
+            Console.WriteLine("2. Gestion de Auto");
+            Console.WriteLine("3. Gestion de Rutas");
+            Console.WriteLine("4. Gestion de Horario");
+            Console.WriteLine("5. Gestion de Mantenimiento de Autos");
+        Console.WriteLine("6. Salir");
             option = Convert.ToString(Console.ReadLine());
+
+        do
+        {
 
             switch (option)
             {
                 case "1":
-                    menuDriver();
+                    ViewDriver.menuDriver();
                     break;
 
                 case "2":
-                    menuCar();
-                    break;
-
-                case "4":
-                    salir = true;
-
-                    Console.WriteLine(FiggleFonts.Standard.Render("Adios!"));
-                    break;
-            }
-        }
-    }
-
-    static void menuDriver()
-    {
-        Console.Clear();
-
-        Console.WriteLine(FiggleFonts.Standard.Render("Gestion de Conductores"));
-
-        Console.WriteLine("1. Añadir Conductor");
-        Console.WriteLine("2. Mirar Conductores");
-        Console.WriteLine("3. Eliminar Conductores");
-        Console.WriteLine("4. Buscar Conductores");
-        Console.WriteLine("5. Salir");
-
-        Console.WriteLine("Introduce tu opcion: ");
-        bool exit = false;
-        string driveOption = Convert.ToString(Console.Read());
-
-        while (!exit)
-        {
-            switch (driveOption)
-            {
-                case "1":
-                    DriverController.addDriver();
-                    break;
-
-                case "2":
-                    DriverController.viewDriver();
+                    ViewCar.menuCar();
                     break;
 
                 case "3":
-                    DriverController.deleteDriver();
+                    ViewRoute.menuRoute();
                     break;
 
                 case "4":
-                    DriverController.searchDriver();
+                    ViewHorario.menuHorario();
                     break;
 
-                case "5":
-                    exit = true;
+                case "5": 
+                    ViewCarMantainment.MenuCarMantainment();
+                    break;
+
+                case "6":
+
+                    int lol;
+                    if (new Random().Next(0, 25) == 0)
+                    {
+                        lol = 15;
+                        Console.WriteLine(FiggleFonts.Standard.Render("Tu maldita madre!"));
+
+                    }
+                    else
+                    {
+                        lol = 2;
+                        Console.WriteLine(FiggleFonts.Standard.Render("Adios!"));
+
+                    }
+                    break;
+
+                    default: 
                     break;
             }
-        }
+        }while (option == "5");
+
     }
 
-    static void menuCar()
-    {
-        Console.Clear();
-        Console.WriteLine(FiggleFonts.Standard.Render("Gestion de Autos"));
-
-        Console.WriteLine("1. Añadir Auto");
-        Console.WriteLine("2. Mirar Autos");
-        Console.WriteLine("3. Eliminar Autos");
-        Console.WriteLine("4. Buscar Autos");
-        Console.WriteLine("5. Salir");
-        Console.WriteLine("Introduce tu opcion: ");
-        bool back = false;
-        int carOption = Convert.ToInt32(Console.Read());
-        switch (carOption)
-        {
-            case 1:
-                carController.addCar();
-                break;
-            case 2:
-                carController.viewCars();
-                break;
-            case 3:
-                carController.deleteCar();
-                break;
-            case 4:
-                carController.searchCar();
-                break;
-
-            case 5:
-                back = true;
-                break;
-        }
-    }
+    
 
 
 }

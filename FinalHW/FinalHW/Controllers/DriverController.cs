@@ -24,7 +24,7 @@ namespace FinalHW.Controllers
 
                 Console.WriteLine("Introduce el nombre del conductor: ");
                 string fname = Convert.ToString(Console.ReadLine());
-                Console.Write("Apellido");
+                Console.WriteLine("Apellido: ");
                 string lName = Convert.ToString(Console.ReadLine());
                 Console.WriteLine("Edad");
                 int edad = Convert.ToInt32(Console.ReadLine());
@@ -38,6 +38,9 @@ namespace FinalHW.Controllers
                 string driverState = Convert.ToString(Console.ReadLine());
 
                 var a = new Driver() { Name = fname, lastName = lName, age = edad, city = ciudad, country = pais, phone = numero};
+
+                drive.Driver.Add(a);
+                drive.SaveChanges();
 
             }
         }
@@ -63,69 +66,81 @@ namespace FinalHW.Controllers
             using (var delete = new dbContext())
             {
                 int option = 0;
-                do
+
+                Console.WriteLine("1. Ver conductores disponibles");
+                Console.WriteLine("2. Eliminar conductor");
+                Console.WriteLine("3. Salir");
+
+                option = Convert.ToInt32(Console.ReadLine());
+
+                using (var showdrive = new dbContext())
                 {
-
-                    option = Convert.ToInt32(Console.ReadLine());
-
                     switch (option)
                     {
                         case 1:
+                            Console.WriteLine("Conductores disponibles a eliminar: ");
+                            if (showdrive.Driver == null)
                             {
-
-                                using (var showdrive = new dbContext())
+                                Console.WriteLine("No hay conductores disponibles");
+                            }
+                            else
+                            {
+                                foreach (var d in showdrive.Driver)
                                 {
-                                    Console.WriteLine("Conductores disponibles a eliminar: ");
-                                    foreach (var d in showdrive.Driver)
-                                    {
-                                        Console.WriteLine($"ID: {d.driverID} Nombre: {d.Name} Apellido: {d.lastName} Edad: {d.age} Ciudad: {d.city} Pais: {d.country} Numero: {d.phone}");
-                                    }
-
-
-                                    Console.WriteLine("Introduce el ID del conductor a eliminar: ");
-                                    int delID = Convert.ToInt32(Console.ReadLine());
-
-                                    var delDriver = new Driver() { driverID = delID };
-
-                                    using (var deletedriver = new dbContext())
-                                    {
-                                        var d = showdrive.Driver.Find(delID);
-                                        Console.WriteLine($"ID: {d.driverID} Nombre: {d.Name} Apellido: {d.lastName} Edad: {d.age} Ciudad: {d.city} Pais {d.country} Numero: {d.phone}");
-                                    }
-
-                                    Console.WriteLine("Desea borrar este usuario? ");
-                                    Console.WriteLine("1. Si 2. No");
-                                    var del = showdrive.Driver.Find(delID);
-
-                                    int decide = Convert.ToInt32(Console.ReadLine());
-
-                                    if (decide == 1)
-                                    {
-                                        using (var remove = new dbContext())
-                                        {
-                                            delete.Remove<Driver>(del);
-                                            delete.SaveChanges();
-                                            Console.WriteLine("El conductor se ha borrado correctamente");
-                                        }
-                                    }
-                                    else
-                                    {
-                                        Console.WriteLine("El conductor no sera eliminado");
-                                    }
+                                    Console.WriteLine($"ID {d.driverID} Nombre: {d.Name} Apellido {d.lastName} Edad: {d.age} Ciudad: {d.city} Telefono {d.phone}");
                                 }
                             }
                             break;
-                    }
-                } while (option != 6);
 
+                        case 2:
+                            Console.WriteLine("Introduce el ID del conductor a eliminar: ");
+                            int delID = Convert.ToInt32(Console.ReadLine());
+
+                            var delDriver = new Driver() { driverID = delID };
+
+                            using (var deletedriver = new dbContext())
+                            {
+                                var d = showdrive.Driver.Find(delID);
+                                Console.WriteLine($"ID: {d.driverID} Nombre: {d.Name} Apellido: {d.lastName} Edad: {d.age} Ciudad: {d.city} Pais {d.country} Numero: {d.phone}");
+                            }
+
+                            Console.WriteLine("Desea borrar este usuario? ");
+                            Console.WriteLine("1. Si 2. No");
+                            var del = showdrive.Driver.Find(delID);
+
+                            int decide = Convert.ToInt32(Console.ReadLine());
+
+                            if (decide == 1)
+                            {
+                                using (var remove = new dbContext())
+                                {
+                                    delete.Remove(del);
+                                    delete.SaveChanges();
+                                    Console.WriteLine("El conductor se ha borrado correctamente");
+                                }
+                            }
+                            else
+                            {
+                                Console.WriteLine("El conductor no sera eliminado");
+                            }
+                            break;
+
+                    }
+
+                }
             }
-        }
+                      
+            }
+        
 
 
         public static void editDriver()
         {
 
-
+            using (var edit = new dbContext())
+            {
+                edit.Database.EnsureCreated();
+            
             Console.WriteLine("Introduce el ID a buscar");
             int searchID = Convert.ToInt32(Console.ReadLine());
 
@@ -135,16 +150,28 @@ namespace FinalHW.Controllers
               Console.WriteLine($"ID: {found.driverID} Nombre: {found.Name} Apellido: {found.lastName} Edad: {found.age} Ciudad: {found.city} Pais: {found.country}, Telefono: {found.phone} ");
                 
             }
+            Console.WriteLine("Introduce los nuevos datos del conductor: ");
+                Console.WriteLine("Nombre: ");
+                string ename = Convert.ToString(Console.ReadLine());
+                Console.WriteLine("Apellido: ");
+                string edlname = Convert.ToString(Console.ReadLine());
+                Console.WriteLine("Edad: ");
+                int eage = Convert.ToInt32(Console.ReadLine());
+                Console.WriteLine("Ciudad: ");
+                string eciudad = Convert.ToString(Console.ReadLine());
+                Console.WriteLine("Pais: ");
+                string epais = Convert.ToString(Console.ReadLine());
+                Console.WriteLine("Telefono: ");
+                string ephone = Convert.ToString(Console.ReadLine());
+                Console.WriteLine("Estado del conductor (opcional): ");
+                string eDisp = Convert.ToString(Console.ReadLine());
 
-            string ename = Convert.ToString(Console.ReadLine());
-            string edlname = Convert.ToString(Console.ReadLine());
-            int eage = Convert.ToInt32(Console.ReadLine());
-            string eciudad = Convert.ToString(Console.ReadLine());
-            string epais = Convert.ToString(Console.ReadLine());
-            string ephone = Convert.ToString(Console.ReadLine());
-            string eDisp = Convert.ToString(Console.ReadLine());
+            var change = new Driver() { Name = ename, lastName = edlname, age = eage, city = eciudad, country = epais, phone = ephone };
 
-            var edit = new Driver() { Name = ename, lastName = edlname, age = eage, city = eciudad, country = epais, phone = ephone }; 
+                edit.Driver.Update(change);
+                edit.SaveChanges();
+
+            }
         }
 
         public static void searchDriver()
@@ -157,7 +184,17 @@ namespace FinalHW.Controllers
                 int driverID = driver.driverID;
 
                 int searchID = Convert.ToInt32(Console.ReadLine());
-                
+
+                var found = s.Driver.Find(searchID);
+                if (found != null)
+                {
+                    Console.WriteLine($"ID: {found.driverID} Nombre: {found.Name} Apellido: {found.lastName} Edad: {found.age} Ciudad: {found.city} Pais: {found.country}, Telefono: {found.phone}");
+                }
+                else
+                {
+                    Console.WriteLine("Conductor no encontrado");
+                }
+
             }
 
             

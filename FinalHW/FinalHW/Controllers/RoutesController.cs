@@ -20,24 +20,32 @@ namespace FinalHW.Controllers
                 string routeName = Convert.ToString(Console.ReadLine());
 
                 Console.WriteLine("Introduce la distancia aproximada");
-                double length = Convert.ToDouble(Console.Read());
+                double length = Convert.ToDouble(Console.ReadLine());
 
                 Console.WriteLine("Introduce el tiempo del viaje (HH:MM)");
-
+                string time = Convert.ToString(Console.ReadLine());
                 TimeSpan tiempoEstimado;
 
-                string time = Console.ReadLine();
+                Console.WriteLine("Introduce la tarifa de la ruta");
+                float price = Convert.ToSingle(Console.ReadLine());
+
+
 
                 if (TimeSpan.TryParse(time, out tiempoEstimado))
                 {
-                    var Routes = new Routes
+                    var add = new Routes
                     {
                         Nombre = routeName,
                         Distancia = length,
-                        estimedTime = tiempoEstimado
+                        estimedTime = tiempoEstimado,
+                        Price = price
+                    
                     };
 
-                    Console.WriteLine($"Tiempo estiamdo guardado: {Routes.estimedTime}");
+                    Console.WriteLine($"Tiempo estiamdo guardado: {add.estimedTime}");
+
+                    route.Add(add);
+                    route.SaveChanges();
                 }
                 else
                 {
@@ -59,7 +67,7 @@ namespace FinalHW.Controllers
             {
                 foreach (var v in view.Rutas)
                 {
-                    Console.WriteLine($"ID {v.ID} Ruta: {v.Nombre} Distancia: {v.Distancia} Tiempo estimado: {v.estimedTime}");
+                    Console.WriteLine($"ID {v.RouteID} Ruta: {v.Nombre} Distancia: {v.Distancia} Tiempo estimado: {v.estimedTime} Tarifa: {v.Price}");
                 }
             }
         }
@@ -74,13 +82,13 @@ namespace FinalHW.Controllers
 
                 foreach (var d in delete.Rutas)
                 {
-                    Console.WriteLine($"ID: {d.ID} Ruta: {d.Nombre} Distancia: {d.Distancia} Timepo estimado: {d.estimedTime}");
+                    Console.WriteLine($"ID: {d.RouteID} Ruta: {d.Nombre} Distancia: {d.Distancia} Timepo estimado: {d.estimedTime}");
                 }
 
                 Console.WriteLine("Introduce el ID a eliminar: ");
                 int delRoute = Convert.ToInt32(Console.Read());
 
-                var showRoute = new Routes() { ID = delRoute };
+                var showRoute = new Routes() { RouteID = delRoute };
 
                 using (var del = new dbContext())
                 {
@@ -149,6 +157,54 @@ namespace FinalHW.Controllers
             }
         }
 
+        public static void addDriverToRoute()
+        {
+            Console.WriteLine(FiggleFonts.Standard.Render("Añadir"));
+            using (var add = new dbContext())
+            {
+                Console.WriteLine("Introduce el ID de la ruta a la que se le asignara un conductor: ");
+                int routeID = Convert.ToInt32(Console.ReadLine());
+                var route = add.Rutas.Find(routeID);
+                if (route != null)
+                {
+                    Console.WriteLine("Introduce el ID del conductor a asignar: ");
+                    int driverID = Convert.ToInt32(Console.ReadLine());
+                    var driver = add.Driver.Find(driverID);
+                    if (driver != null)
+                    {
+                        route.drivers.Add(driver);
+                        add.SaveChanges();
+                        Console.WriteLine($"Conductor {driver.Name} asignado a la ruta {route.Nombre}");
+                    }
+                    else
+                    {
+                        Console.WriteLine("Conductor no encontrado.");
+                    }
+                }
+                else
+                {
+                    Console.WriteLine("Ruta no encontrada.");
+                }
+            }
+            }
 
-    }
+            public static void searchRoute()
+        {
+            Console.WriteLine("Introduce el nombre de la ruta a buscar: ");
+            string routeName = Convert.ToString(Console.ReadLine());
+            using (var search = new dbContext())
+            {
+                var foundRoute = search.Rutas.FirstOrDefault(r => r.Nombre.Equals(routeName, StringComparison.OrdinalIgnoreCase));
+                if (foundRoute != null)
+                {
+                    Console.WriteLine($"Ruta encontrada: ID {foundRoute.RouteID}, Nombre: {foundRoute.Nombre}, Distancia: {foundRoute.Distancia}, Tiempo estimado: {foundRoute.estimedTime}");
+                }
+                else
+                {
+                    Console.WriteLine("Ruta no encontrada.");
+                }
+            }
+        }
+
+        }
 }
