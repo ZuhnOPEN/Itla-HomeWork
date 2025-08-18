@@ -86,22 +86,23 @@ namespace FinalHW.Controllers
                 }
 
                 Console.WriteLine("Introduce el ID a eliminar: ");
-                int delRoute = Convert.ToInt32(Console.Read());
+                int delRoute = Convert.ToInt32(Console.ReadLine());
 
                 var showRoute = new Routes() { RouteID = delRoute };
 
                 using (var del = new dbContext())
                 {
                     var sup = delete.Cars.Find(delRoute);
-
-                    int option = Convert.ToInt32(Console.ReadLine());
+                    
                 }
 
                 Console.WriteLine("Desea borrar este usuario?");
                 Console.WriteLine("1. Si 2. No");
-                var supRoute = delete.Rutas.Find(delRoute);
 
                 int decide = Convert.ToInt32(Console.ReadLine());
+
+                var supRoute = delete.Rutas.Find(delRoute);
+
 
                 if (decide == 1)
                 {
@@ -194,7 +195,8 @@ namespace FinalHW.Controllers
             string routeName = Convert.ToString(Console.ReadLine());
             using (var search = new dbContext())
             {
-                var foundRoute = search.Rutas.FirstOrDefault(r => r.Nombre.Equals(routeName, StringComparison.OrdinalIgnoreCase));
+                var foundRoute = search.Rutas
+    .FirstOrDefault(r => r.Nombre.ToLower() == routeName.ToLower());
                 if (foundRoute != null)
                 {
                     Console.WriteLine($"Ruta encontrada: ID {foundRoute.RouteID}, Nombre: {foundRoute.Nombre}, Distancia: {foundRoute.Distancia}, Tiempo estimado: {foundRoute.estimedTime}");

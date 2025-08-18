@@ -139,13 +139,14 @@ namespace FinalHW.Controllers
 
             using (var edit = new dbContext())
             {
-                edit.Database.EnsureCreated();
             
             Console.WriteLine("Introduce el ID a buscar");
             int searchID = Convert.ToInt32(Console.ReadLine());
 
             using (var view = new dbContext())
             {
+
+
               var found = view.Driver.Find(searchID);                      
               Console.WriteLine($"ID: {found.driverID} Nombre: {found.Name} Apellido: {found.lastName} Edad: {found.age} Ciudad: {found.city} Pais: {found.country}, Telefono: {found.phone} ");
                 
@@ -166,9 +167,10 @@ namespace FinalHW.Controllers
                 Console.WriteLine("Estado del conductor (opcional): ");
                 string eDisp = Convert.ToString(Console.ReadLine());
 
-            var change = new Driver() { Name = ename, lastName = edlname, age = eage, city = eciudad, country = epais, phone = ephone };
+            var change = new Driver() {driverID = searchID, Name = ename, lastName = edlname, age = eage, city = eciudad, country = epais, phone = ephone };
 
-                edit.Driver.Update(change);
+                edit.Driver.UpdateRange(change);
+                
                 edit.SaveChanges();
 
             }

@@ -70,12 +70,23 @@ namespace FinalHW.Controllers
             {
                 foreach (var car in view.Cars)
                 {
-                    Console.WriteLine($"Placa: {car.Plaque}, Asientos: {car.Amount}, Estado: {car.State}");
+                    Console.WriteLine($"ID: {car.ID} Placa: {car.Plaque}, Asientos: {car.Amount}, Estado: {car.State}");
                 }
             }
         }
         public static void deleteCar()
         {
+            Console.WriteLine("Autos a eliminar");
+
+            using (var searchdelete = new dbContext()){
+                foreach(var car in searchdelete.Cars)
+                {
+                    Console.WriteLine($"ID: {car.ID} Placa: {car.Plaque}, Asientos: {car.Amount}, Estado: {car.State}");
+
+                }
+            }
+
+
             Console.WriteLine("Eliminar Auto");
             Console.WriteLine("Introduce la placa del auto a eliminar: ");
             string plaque = Console.ReadLine();

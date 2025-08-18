@@ -17,7 +17,7 @@ public class Program
             Console.WriteLine("3. Gestion de Rutas");
             Console.WriteLine("4. Gestion de Horario");
             Console.WriteLine("5. Gestion de Mantenimiento de Autos");
-        Console.WriteLine("6. Salir");
+            Console.WriteLine("6. Salir");
             option = Convert.ToString(Console.ReadLine());
 
         do
@@ -30,6 +30,7 @@ public class Program
                     break;
 
                 case "2":
+
                     ViewCar.menuCar();
                     break;
 
