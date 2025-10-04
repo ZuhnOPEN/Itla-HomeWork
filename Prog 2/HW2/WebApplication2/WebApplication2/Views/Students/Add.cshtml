@@ -1,0 +1,47 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+
+@model WebApplication2.Models.addStudentViewModel
+
+<h1> Añadir estudiante</h1>
+
+<form method="post">
+
+    <div class ="mt-3">
+      <label class="form-label">Nombre</label>
+     <input type="text" class="form-control" asp-for="Name"/>
+    </div>
+
+    <div class="mt-3">
+     <label class="form-label">Correo</label>
+      <input type="email" class="form-control" asp-for="email"/>
+    </div>
+
+    <div class="mt-3">
+     <label class="form-label">Apellidos</label>
+     <input type="text" class="form-control" asp-for="lastName"/>
+    </div>
+
+    <div class="mt-3">
+        <label class="form-label">Descripcion del Estudiante</label>
+     <input type="text" class="form-control" asp-for="Description"/>
+    </div>
+
+    <div class="mt-3">
+     <label class="form-label">Numero de telefono.</label>
+     <input type="number" class="form-control" asp-for="phone"/>
+    </div>
+
+    <div class="mt-3">
+        <input type="checkbox" class="form-check-input" id="Suscrito" asp-for="News"/>
+     <label class="form-check-label" fpr="Suscrito">Suscrito</label>
+    </div>
+
+    <div class="mt-3">
+        <button type="submit" class="btn btn-primary">Guardar</button>
+    </div>
+
+</form>

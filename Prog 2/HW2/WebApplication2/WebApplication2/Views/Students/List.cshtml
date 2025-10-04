@@ -1,0 +1,40 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+
+@model List<WebApplication2.Models.Entity.Students>
+
+<h1>Lista de estudiantes</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Nombre</th>
+            <th>Apellidos</th>
+            <th>Correo</th>
+            <th>Descripcion</th>
+            <th>Telefono</th>
+            <th>Suscrito</th>
+        </tr>
+        </thead>
+        <tbody>
+            @foreach (var student in Model)
+            {
+                <tr>
+                    <td>@student.Id</td>
+                    <td>@student.Name</td>
+                    <td>@student.lastName</td>
+                    <td>@student.email</td>
+                    <td>@student.Description</td>
+                    <td>@student.phone</td>
+                    <td>@(student.News ? "Sí" : "No")</td>
+                    <td>
+                        <a class="btn btn-primary" asp-controller="Students" asp-action="Edit" asp-route-id="@student.Id">Editar</a>
+                    </td>
+                </tr>
+        }
+        </tbody>
+</table>
