@@ -1,0 +1,367 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\Airesito\\source\\repos\\FinalHW2\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{29C05DE0-474F-4FCD-B211-359C6D8C02CA}|FinalHW2.Application\\FinalHW2.Application.csproj|c:\\users\\airesito\\source\\repos\\finalhw2\\finalhw2.application\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{29C05DE0-474F-4FCD-B211-359C6D8C02CA}|FinalHW2.Application\\FinalHW2.Application.csproj|solutionrelative:finalhw2.application\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7DB2B48F-35F9-47E2-933D-EA6534E716B2}|FinalHW2.Infrastructure\\FinalHW2.Infrastructure.csproj|c:\\users\\airesito\\source\\repos\\finalhw2\\finalhw2.infrastructure\\dependencyinjection.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7DB2B48F-35F9-47E2-933D-EA6534E716B2}|FinalHW2.Infrastructure\\FinalHW2.Infrastructure.csproj|solutionrelative:finalhw2.infrastructure\\dependencyinjection.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7DB2B48F-35F9-47E2-933D-EA6534E716B2}|FinalHW2.Infrastructure\\FinalHW2.Infrastructure.csproj|c:\\users\\airesito\\source\\repos\\finalhw2\\finalhw2.infrastructure\\core\\schedulerepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7DB2B48F-35F9-47E2-933D-EA6534E716B2}|FinalHW2.Infrastructure\\FinalHW2.Infrastructure.csproj|solutionrelative:finalhw2.infrastructure\\core\\schedulerepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7DB2B48F-35F9-47E2-933D-EA6534E716B2}|FinalHW2.Infrastructure\\FinalHW2.Infrastructure.csproj|c:\\users\\airesito\\source\\repos\\finalhw2\\finalhw2.infrastructure\\core\\vehiclerepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7DB2B48F-35F9-47E2-933D-EA6534E716B2}|FinalHW2.Infrastructure\\FinalHW2.Infrastructure.csproj|solutionrelative:finalhw2.infrastructure\\core\\vehiclerepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7DB2B48F-35F9-47E2-933D-EA6534E716B2}|FinalHW2.Infrastructure\\FinalHW2.Infrastructure.csproj|c:\\users\\airesito\\source\\repos\\finalhw2\\finalhw2.infrastructure\\core\\driverrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7DB2B48F-35F9-47E2-933D-EA6534E716B2}|FinalHW2.Infrastructure\\FinalHW2.Infrastructure.csproj|solutionrelative:finalhw2.infrastructure\\core\\driverrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7DB2B48F-35F9-47E2-933D-EA6534E716B2}|FinalHW2.Infrastructure\\FinalHW2.Infrastructure.csproj|c:\\users\\airesito\\source\\repos\\finalhw2\\finalhw2.infrastructure\\interfaces\\ischedulerepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7DB2B48F-35F9-47E2-933D-EA6534E716B2}|FinalHW2.Infrastructure\\FinalHW2.Infrastructure.csproj|solutionrelative:finalhw2.infrastructure\\interfaces\\ischedulerepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7DB2B48F-35F9-47E2-933D-EA6534E716B2}|FinalHW2.Infrastructure\\FinalHW2.Infrastructure.csproj|c:\\users\\airesito\\source\\repos\\finalhw2\\finalhw2.infrastructure\\interfaces\\ivehiclerepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7DB2B48F-35F9-47E2-933D-EA6534E716B2}|FinalHW2.Infrastructure\\FinalHW2.Infrastructure.csproj|solutionrelative:finalhw2.infrastructure\\interfaces\\ivehiclerepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7DB2B48F-35F9-47E2-933D-EA6534E716B2}|FinalHW2.Infrastructure\\FinalHW2.Infrastructure.csproj|c:\\users\\airesito\\source\\repos\\finalhw2\\finalhw2.infrastructure\\interfaces\\idriverrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7DB2B48F-35F9-47E2-933D-EA6534E716B2}|FinalHW2.Infrastructure\\FinalHW2.Infrastructure.csproj|solutionrelative:finalhw2.infrastructure\\interfaces\\idriverrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E5ACC4AC-CDEC-4B82-8A1E-F9FB708B5FE1}|FinalHW2.Server\\FinalHW2.Server.csproj|c:\\users\\airesito\\source\\repos\\finalhw2\\finalhw2.server\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E5ACC4AC-CDEC-4B82-8A1E-F9FB708B5FE1}|FinalHW2.Server\\FinalHW2.Server.csproj|solutionrelative:finalhw2.server\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7DB2B48F-35F9-47E2-933D-EA6534E716B2}|FinalHW2.Infrastructure\\FinalHW2.Infrastructure.csproj|c:\\users\\airesito\\source\\repos\\finalhw2\\finalhw2.infrastructure\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7DB2B48F-35F9-47E2-933D-EA6534E716B2}|FinalHW2.Infrastructure\\FinalHW2.Infrastructure.csproj|solutionrelative:finalhw2.infrastructure\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7DB2B48F-35F9-47E2-933D-EA6534E716B2}|FinalHW2.Infrastructure\\FinalHW2.Infrastructure.csproj|c:\\users\\airesito\\source\\repos\\finalhw2\\finalhw2.infrastructure\\context\\drivercontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7DB2B48F-35F9-47E2-933D-EA6534E716B2}|FinalHW2.Infrastructure\\FinalHW2.Infrastructure.csproj|solutionrelative:finalhw2.infrastructure\\context\\drivercontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7DB2B48F-35F9-47E2-933D-EA6534E716B2}|FinalHW2.Infrastructure\\FinalHW2.Infrastructure.csproj|c:\\users\\airesito\\source\\repos\\finalhw2\\finalhw2.infrastructure\\core\\routerepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7DB2B48F-35F9-47E2-933D-EA6534E716B2}|FinalHW2.Infrastructure\\FinalHW2.Infrastructure.csproj|solutionrelative:finalhw2.infrastructure\\core\\routerepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7DB2B48F-35F9-47E2-933D-EA6534E716B2}|FinalHW2.Infrastructure\\FinalHW2.Infrastructure.csproj|c:\\users\\airesito\\source\\repos\\finalhw2\\finalhw2.infrastructure\\core\\baserepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7DB2B48F-35F9-47E2-933D-EA6534E716B2}|FinalHW2.Infrastructure\\FinalHW2.Infrastructure.csproj|solutionrelative:finalhw2.infrastructure\\core\\baserepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7DB2B48F-35F9-47E2-933D-EA6534E716B2}|FinalHW2.Infrastructure\\FinalHW2.Infrastructure.csproj|c:\\users\\airesito\\source\\repos\\finalhw2\\finalhw2.infrastructure\\interfaces\\irouterepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7DB2B48F-35F9-47E2-933D-EA6534E716B2}|FinalHW2.Infrastructure\\FinalHW2.Infrastructure.csproj|solutionrelative:finalhw2.infrastructure\\interfaces\\irouterepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{97F96571-899F-4D67-87D5-F550DFFCCC69}|FinalHW2.Domain\\FinalHW2.Domain.csproj|c:\\users\\airesito\\source\\repos\\finalhw2\\finalhw2.domain\\core\\drivers.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{97F96571-899F-4D67-87D5-F550DFFCCC69}|FinalHW2.Domain\\FinalHW2.Domain.csproj|solutionrelative:finalhw2.domain\\core\\drivers.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{97F96571-899F-4D67-87D5-F550DFFCCC69}|FinalHW2.Domain\\FinalHW2.Domain.csproj|c:\\users\\airesito\\source\\repos\\finalhw2\\finalhw2.domain\\core\\baseentity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{97F96571-899F-4D67-87D5-F550DFFCCC69}|FinalHW2.Domain\\FinalHW2.Domain.csproj|solutionrelative:finalhw2.domain\\core\\baseentity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7DB2B48F-35F9-47E2-933D-EA6534E716B2}|FinalHW2.Infrastructure\\FinalHW2.Infrastructure.csproj|c:\\users\\airesito\\source\\repos\\finalhw2\\finalhw2.infrastructure\\finalhw2.infrastructure.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{7DB2B48F-35F9-47E2-933D-EA6534E716B2}|FinalHW2.Infrastructure\\FinalHW2.Infrastructure.csproj|solutionrelative:finalhw2.infrastructure\\finalhw2.infrastructure.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{97F96571-899F-4D67-87D5-F550DFFCCC69}|FinalHW2.Domain\\FinalHW2.Domain.csproj|c:\\users\\airesito\\source\\repos\\finalhw2\\finalhw2.domain\\entities\\routes.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{97F96571-899F-4D67-87D5-F550DFFCCC69}|FinalHW2.Domain\\FinalHW2.Domain.csproj|solutionrelative:finalhw2.domain\\entities\\routes.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{97F96571-899F-4D67-87D5-F550DFFCCC69}|FinalHW2.Domain\\FinalHW2.Domain.csproj|c:\\users\\airesito\\source\\repos\\finalhw2\\finalhw2.domain\\entities\\vehicles.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{97F96571-899F-4D67-87D5-F550DFFCCC69}|FinalHW2.Domain\\FinalHW2.Domain.csproj|solutionrelative:finalhw2.domain\\entities\\vehicles.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{97F96571-899F-4D67-87D5-F550DFFCCC69}|FinalHW2.Domain\\FinalHW2.Domain.csproj|c:\\users\\airesito\\source\\repos\\finalhw2\\finalhw2.domain\\entities\\schedule.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{97F96571-899F-4D67-87D5-F550DFFCCC69}|FinalHW2.Domain\\FinalHW2.Domain.csproj|solutionrelative:finalhw2.domain\\entities\\schedule.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{97F96571-899F-4D67-87D5-F550DFFCCC69}|FinalHW2.Domain\\FinalHW2.Domain.csproj|c:\\users\\airesito\\source\\repos\\finalhw2\\finalhw2.domain\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{97F96571-899F-4D67-87D5-F550DFFCCC69}|FinalHW2.Domain\\FinalHW2.Domain.csproj|solutionrelative:finalhw2.domain\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\Airesito\\source\\repos\\FinalHW2\\FinalHW2.Application\\Program.cs",
+              "RelativeDocumentMoniker": "FinalHW2.Application\\Program.cs",
+              "ToolTip": "C:\\Users\\Airesito\\source\\repos\\FinalHW2\\FinalHW2.Application\\Program.cs",
+              "RelativeToolTip": "FinalHW2.Application\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-08T03:53:55.35Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "DependencyInjection.cs",
+              "DocumentMoniker": "C:\\Users\\Airesito\\source\\repos\\FinalHW2\\FinalHW2.Infrastructure\\DependencyInjection.cs",
+              "RelativeDocumentMoniker": "FinalHW2.Infrastructure\\DependencyInjection.cs",
+              "ToolTip": "C:\\Users\\Airesito\\source\\repos\\FinalHW2\\FinalHW2.Infrastructure\\DependencyInjection.cs",
+              "RelativeToolTip": "FinalHW2.Infrastructure\\DependencyInjection.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-08T03:51:39.346Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "ScheduleRepository.cs",
+              "DocumentMoniker": "C:\\Users\\Airesito\\source\\repos\\FinalHW2\\FinalHW2.Infrastructure\\Core\\ScheduleRepository.cs",
+              "RelativeDocumentMoniker": "FinalHW2.Infrastructure\\Core\\ScheduleRepository.cs",
+              "ToolTip": "C:\\Users\\Airesito\\source\\repos\\FinalHW2\\FinalHW2.Infrastructure\\Core\\ScheduleRepository.cs",
+              "RelativeToolTip": "FinalHW2.Infrastructure\\Core\\ScheduleRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-08T03:51:27.256Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "VehicleRepository.cs",
+              "DocumentMoniker": "C:\\Users\\Airesito\\source\\repos\\FinalHW2\\FinalHW2.Infrastructure\\Core\\VehicleRepository.cs",
+              "RelativeDocumentMoniker": "FinalHW2.Infrastructure\\Core\\VehicleRepository.cs",
+              "ToolTip": "C:\\Users\\Airesito\\source\\repos\\FinalHW2\\FinalHW2.Infrastructure\\Core\\VehicleRepository.cs",
+              "RelativeToolTip": "FinalHW2.Infrastructure\\Core\\VehicleRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-08T03:51:14.71Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "DriverRepository.cs",
+              "DocumentMoniker": "C:\\Users\\Airesito\\source\\repos\\FinalHW2\\FinalHW2.Infrastructure\\Core\\DriverRepository.cs",
+              "RelativeDocumentMoniker": "FinalHW2.Infrastructure\\Core\\DriverRepository.cs",
+              "ToolTip": "C:\\Users\\Airesito\\source\\repos\\FinalHW2\\FinalHW2.Infrastructure\\Core\\DriverRepository.cs",
+              "RelativeToolTip": "FinalHW2.Infrastructure\\Core\\DriverRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-08T03:51:05.431Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "IScheduleRepository.cs",
+              "DocumentMoniker": "C:\\Users\\Airesito\\source\\repos\\FinalHW2\\FinalHW2.Infrastructure\\Interfaces\\IScheduleRepository.cs",
+              "RelativeDocumentMoniker": "FinalHW2.Infrastructure\\Interfaces\\IScheduleRepository.cs",
+              "ToolTip": "C:\\Users\\Airesito\\source\\repos\\FinalHW2\\FinalHW2.Infrastructure\\Interfaces\\IScheduleRepository.cs",
+              "RelativeToolTip": "FinalHW2.Infrastructure\\Interfaces\\IScheduleRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-08T03:50:59.197Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "IVehicleRepository.cs",
+              "DocumentMoniker": "C:\\Users\\Airesito\\source\\repos\\FinalHW2\\FinalHW2.Infrastructure\\Interfaces\\IVehicleRepository.cs",
+              "RelativeDocumentMoniker": "FinalHW2.Infrastructure\\Interfaces\\IVehicleRepository.cs",
+              "ToolTip": "C:\\Users\\Airesito\\source\\repos\\FinalHW2\\FinalHW2.Infrastructure\\Interfaces\\IVehicleRepository.cs",
+              "RelativeToolTip": "FinalHW2.Infrastructure\\Interfaces\\IVehicleRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-08T03:50:54.715Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "IDriverRepository.cs",
+              "DocumentMoniker": "C:\\Users\\Airesito\\source\\repos\\FinalHW2\\FinalHW2.Infrastructure\\Interfaces\\IDriverRepository.cs",
+              "RelativeDocumentMoniker": "FinalHW2.Infrastructure\\Interfaces\\IDriverRepository.cs",
+              "ToolTip": "C:\\Users\\Airesito\\source\\repos\\FinalHW2\\FinalHW2.Infrastructure\\Interfaces\\IDriverRepository.cs",
+              "RelativeToolTip": "FinalHW2.Infrastructure\\Interfaces\\IDriverRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-08T03:50:50.315Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\Airesito\\source\\repos\\FinalHW2\\FinalHW2.Server\\Program.cs",
+              "RelativeDocumentMoniker": "FinalHW2.Server\\Program.cs",
+              "ToolTip": "C:\\Users\\Airesito\\source\\repos\\FinalHW2\\FinalHW2.Server\\Program.cs",
+              "RelativeToolTip": "FinalHW2.Server\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAAgAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-08T03:50:32.663Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "DriverContext.cs",
+              "DocumentMoniker": "C:\\Users\\Airesito\\source\\repos\\FinalHW2\\FinalHW2.Infrastructure\\Context\\DriverContext.cs",
+              "RelativeDocumentMoniker": "FinalHW2.Infrastructure\\Context\\DriverContext.cs",
+              "ToolTip": "C:\\Users\\Airesito\\source\\repos\\FinalHW2\\FinalHW2.Infrastructure\\Context\\DriverContext.cs",
+              "RelativeToolTip": "FinalHW2.Infrastructure\\Context\\DriverContext.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-30T20:07:58.971Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "RouteRepository.cs",
+              "DocumentMoniker": "C:\\Users\\Airesito\\source\\repos\\FinalHW2\\FinalHW2.Infrastructure\\Core\\RouteRepository.cs",
+              "RelativeDocumentMoniker": "FinalHW2.Infrastructure\\Core\\RouteRepository.cs",
+              "ToolTip": "C:\\Users\\Airesito\\source\\repos\\FinalHW2\\FinalHW2.Infrastructure\\Core\\RouteRepository.cs",
+              "RelativeToolTip": "FinalHW2.Infrastructure\\Core\\RouteRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-30T20:03:59.461Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "BaseRepository.cs",
+              "DocumentMoniker": "C:\\Users\\Airesito\\source\\repos\\FinalHW2\\FinalHW2.Infrastructure\\Core\\BaseRepository.cs",
+              "RelativeDocumentMoniker": "FinalHW2.Infrastructure\\Core\\BaseRepository.cs",
+              "ToolTip": "C:\\Users\\Airesito\\source\\repos\\FinalHW2\\FinalHW2.Infrastructure\\Core\\BaseRepository.cs",
+              "RelativeToolTip": "FinalHW2.Infrastructure\\Core\\BaseRepository.cs",
+              "ViewState": "AgIAACwAAAAAAAAAAAAIwAgAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-30T19:27:23.456Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "FinalHW2.Infrastructure.csproj",
+              "DocumentMoniker": "C:\\Users\\Airesito\\source\\repos\\FinalHW2\\FinalHW2.Infrastructure\\FinalHW2.Infrastructure.csproj",
+              "RelativeDocumentMoniker": "FinalHW2.Infrastructure\\FinalHW2.Infrastructure.csproj",
+              "ToolTip": "C:\\Users\\Airesito\\source\\repos\\FinalHW2\\FinalHW2.Infrastructure\\FinalHW2.Infrastructure.csproj",
+              "RelativeToolTip": "FinalHW2.Infrastructure\\FinalHW2.Infrastructure.csproj",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2025-11-30T19:06:26.462Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "IRouteRepository.cs",
+              "DocumentMoniker": "C:\\Users\\Airesito\\source\\repos\\FinalHW2\\FinalHW2.Infrastructure\\Interfaces\\IRouteRepository.cs",
+              "RelativeDocumentMoniker": "FinalHW2.Infrastructure\\Interfaces\\IRouteRepository.cs",
+              "ToolTip": "C:\\Users\\Airesito\\source\\repos\\FinalHW2\\FinalHW2.Infrastructure\\Interfaces\\IRouteRepository.cs",
+              "RelativeToolTip": "FinalHW2.Infrastructure\\Interfaces\\IRouteRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAmAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-30T19:05:11.52Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\Airesito\\source\\repos\\FinalHW2\\FinalHW2.Infrastructure\\Program.cs",
+              "RelativeDocumentMoniker": "FinalHW2.Infrastructure\\Program.cs",
+              "ToolTip": "C:\\Users\\Airesito\\source\\repos\\FinalHW2\\FinalHW2.Infrastructure\\Program.cs",
+              "RelativeToolTip": "FinalHW2.Infrastructure\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-30T19:02:07.037Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "Schedule.cs",
+              "DocumentMoniker": "C:\\Users\\Airesito\\source\\repos\\FinalHW2\\FinalHW2.Domain\\Entities\\Schedule.cs",
+              "RelativeDocumentMoniker": "FinalHW2.Domain\\Entities\\Schedule.cs",
+              "ToolTip": "C:\\Users\\Airesito\\source\\repos\\FinalHW2\\FinalHW2.Domain\\Entities\\Schedule.cs",
+              "RelativeToolTip": "FinalHW2.Domain\\Entities\\Schedule.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAjAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-30T18:41:57.941Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "Vehicles.cs",
+              "DocumentMoniker": "C:\\Users\\Airesito\\source\\repos\\FinalHW2\\FinalHW2.Domain\\Entities\\Vehicles.cs",
+              "RelativeDocumentMoniker": "FinalHW2.Domain\\Entities\\Vehicles.cs",
+              "ToolTip": "C:\\Users\\Airesito\\source\\repos\\FinalHW2\\FinalHW2.Domain\\Entities\\Vehicles.cs",
+              "RelativeToolTip": "FinalHW2.Domain\\Entities\\Vehicles.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAApAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-30T18:33:24.922Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "Routes.cs",
+              "DocumentMoniker": "C:\\Users\\Airesito\\source\\repos\\FinalHW2\\FinalHW2.Domain\\Entities\\Routes.cs",
+              "RelativeDocumentMoniker": "FinalHW2.Domain\\Entities\\Routes.cs",
+              "ToolTip": "C:\\Users\\Airesito\\source\\repos\\FinalHW2\\FinalHW2.Domain\\Entities\\Routes.cs",
+              "RelativeToolTip": "FinalHW2.Domain\\Entities\\Routes.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-30T18:29:46.854Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "Drivers.cs",
+              "DocumentMoniker": "C:\\Users\\Airesito\\source\\repos\\FinalHW2\\FinalHW2.Domain\\Core\\Drivers.cs",
+              "RelativeDocumentMoniker": "FinalHW2.Domain\\Core\\Drivers.cs",
+              "ToolTip": "C:\\Users\\Airesito\\source\\repos\\FinalHW2\\FinalHW2.Domain\\Core\\Drivers.cs",
+              "RelativeToolTip": "FinalHW2.Domain\\Core\\Drivers.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAlAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-30T18:27:51.374Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "BaseEntity.cs",
+              "DocumentMoniker": "C:\\Users\\Airesito\\source\\repos\\FinalHW2\\FinalHW2.Domain\\Core\\BaseEntity.cs",
+              "RelativeDocumentMoniker": "FinalHW2.Domain\\Core\\BaseEntity.cs",
+              "ToolTip": "C:\\Users\\Airesito\\source\\repos\\FinalHW2\\FinalHW2.Domain\\Core\\BaseEntity.cs",
+              "RelativeToolTip": "FinalHW2.Domain\\Core\\BaseEntity.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-30T18:09:16.135Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 20,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\Airesito\\source\\repos\\FinalHW2\\FinalHW2.Domain\\Program.cs",
+              "RelativeDocumentMoniker": "FinalHW2.Domain\\Program.cs",
+              "ToolTip": "C:\\Users\\Airesito\\source\\repos\\FinalHW2\\FinalHW2.Domain\\Program.cs",
+              "RelativeToolTip": "FinalHW2.Domain\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-30T17:06:23.558Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

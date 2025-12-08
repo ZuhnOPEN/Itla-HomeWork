@@ -1,0 +1,6 @@
+@FinalHW2.Server_HostAddress = http://localhost:5072
+
+GET {{FinalHW2.Server_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

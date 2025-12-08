@@ -1,0 +1,10 @@
+{
+"SpaProxyServer": {
+"ServerUrl": "https://localhost:65173",
+"RedirectUrl": "",
+"LaunchCommand": "npm run dev",
+"WorkingDirectory": "C:\\Users\\Airesito\\source\\repos\\FinalHW2\\FinalHW2.Server\\..\\finalhw2.client",
+"MaxTimeoutInSeconds": "120",
+"KeepRunning": "false"
+}
+}
