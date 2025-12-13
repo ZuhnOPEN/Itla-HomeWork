@@ -1,0 +1,151 @@
+@page "/bus-stations"
+@inject BusStationService BusStationService
+@rendermode InteractiveAuto
+
+<div class="container mt-4">
+    <h1>Gestión de Estaciones de Autobuses</h1>
+
+    @if (isLoading)
+    {
+        <p>Cargando...</p>
+    }
+    else
+    {
+        <button class="btn btn-primary mb-3" @onclick="ShowCreateForm">Agregar Nueva Estación</button>
+
+        @if (showForm)
+        {
+            <BusStationForm Station="editingStation" OnSave="HandleSave" OnCancel="HideForm" />
+        }
+
+        @if (stations.Any())
+        {
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Nombre</th>
+                        <th>Ciudad</th>
+                        <th>Dirección</th>
+                        <th>Teléfono</th>
+                        <th>Acciones</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var station in stations)
+                    {
+                        <tr>
+                            <td>@station.Id</td>
+                            <td>@station.Name</td>
+                            <td>@station.City</td>
+                            <td>@station.Address</td>
+                            <td>@station.Phone</td>
+                            <td>
+                                <button class="btn btn-sm btn-warning" @onclick="() => EditStation(station)">Editar</button>
+                                <button class="btn btn-sm btn-danger" @onclick="() => DeleteStation(station.Id)">Eliminar</button>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        }
+        else
+        {
+            <p>No hay estaciones registradas.</p>
+        }
+    }
+</div>
+
+@code {
+    private List<BusStationResponseDto> stations = new();
+    private BusStationResponseDto? editingStation;
+    private bool showForm = false;
+    private bool isLoading = true;
+
+    protected override async Task OnInitializedAsync()
+    {
+        await LoadStations();
+        isLoading = false;
+    }
+
+    private async Task LoadStations()
+    {
+        stations = await BusStationService.GetAllAsync();
+    }
+
+    private void ShowCreateForm()
+    {
+        editingStation = null;
+        showForm = true;
+    }
+
+    private void EditStation(BusStationResponseDto station)
+    {
+        editingStation = station;
+        showForm = true;
+    }
+
+    private async Task HandleSave(BusStationResponseDto station)
+    {
+        try
+        {
+            if (station.Id == 0)
+            {
+                var createDto = new CreateBusStationDto
+                {
+                    Name = station.Name,
+                    City = station.City,
+                    Address = station.Address,
+                    Phone = station.Phone
+                };
+                await BusStationService.CreateAsync(createDto);
+            }
+            else
+            {
+                var updateDto = new UpdateBusStationDto
+                {
+                    Id = station.Id,
+                    Name = station.Name,
+                    City = station.City,
+                    Address = station.Address,
+                    Phone = station.Phone
+                };
+                await BusStationService.UpdateAsync(updateDto);
+            }
+
+            await LoadStations();
+            HideForm();
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine($"Error: {ex.Message}");
+        }
+    }
+
+    private async Task DeleteStation(int id)
+    {
+        if (await ConfirmDelete())
+        {
+            try
+            {
+                await BusStationService.DeleteAsync(id);
+                await LoadStations();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Error al eliminar: {ex.Message}");
+            }
+        }
+    }
+
+    private void HideForm()
+    {
+        showForm = false;
+        editingStation = null;
+    }
+
+    private async Task<bool> ConfirmDelete()
+    {
+        return await new ValueTask<bool>(true).AsTask();
+    }
+}

@@ -1,0 +1,68 @@
+@inject BusStationService BusStationService
+
+<div class="card">
+    <div class="card-body">
+        <h5 class="card-title">@(Station?.Id == 0 ? "Nueva Estación" : "Editar Estación")</h5>
+        
+        <div class="mb-3">
+            <label class="form-label">Nombre</label>
+            <input type="text" class="form-control" @bind="formData.Name" />
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label">Ciudad</label>
+            <input type="text" class="form-control" @bind="formData.City" />
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label">Dirección</label>
+            <input type="text" class="form-control" @bind="formData.Address" />
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label">Teléfono</label>
+            <input type="text" class="form-control" @bind="formData.Phone" />
+        </div>
+
+        <button class="btn btn-success" @onclick="SaveStation">Guardar</button>
+        <button class="btn btn-secondary" @onclick="Cancel">Cancelar</button>
+    </div>
+</div>
+
+@code {
+    [Parameter]
+    public BusStationResponseDto? Station { get; set; }
+
+    [Parameter]
+    public EventCallback<BusStationResponseDto> OnSave { get; set; }
+
+    [Parameter]
+    public EventCallback OnCancel { get; set; }
+
+    private BusStationResponseDto formData = new();
+
+    protected override void OnInitialized()
+    {
+        if (Station != null)
+        {
+            formData = new BusStationResponseDto
+            {
+                Id = Station.Id,
+                Name = Station.Name,
+                City = Station.City,
+                Address = Station.Address,
+                Phone = Station.Phone
+            };
+        }
+    }
+
+    private async Task SaveStation()
+    {
+        await OnSave.InvokeAsync(formData);
+    }
+
+    private async Task Cancel()
+    {
+        await OnCancel.InvokeAsync();
+    }
+}

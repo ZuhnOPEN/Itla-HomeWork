@@ -1,0 +1,57 @@
+@using FinalHW2._5.Services
+
+<div class="card mb-4">
+    <div class="card-header bg-info text-white">
+        <h5 class="mb-0">@((Station?.Id == 0 || Station?.Id == null) ? "Nueva Estación" : "Editar Estación")</h5>
+    </div>
+    <div class="card-body">
+        <div class="mb-3">
+            <label class="form-label">Nombre</label>
+            <input type="text" class="form-control" @bind="Station!.Name" placeholder="Nombre de la estación" />
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label">Ciudad</label>
+            <input type="text" class="form-control" @bind="Station!.City" placeholder="Ciudad" />
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label">Dirección</label>
+            <input type="text" class="form-control" @bind="Station!.Address" placeholder="Dirección completa" />
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label">Teléfono</label>
+            <input type="tel" class="form-control" @bind="Station!.Phone" placeholder="Número de teléfono" />
+        </div>
+
+        <div class="d-flex gap-2">
+            <button class="btn btn-success" @onclick="Save">Guardar</button>
+            <button class="btn btn-secondary" @onclick="Cancel">Cancelar</button>
+        </div>
+    </div>
+</div>
+
+@code {
+    [Parameter]
+    public BusStationResponseDto? Station { get; set; }
+
+    [Parameter]
+    public EventCallback<BusStationResponseDto> OnSave { get; set; }
+
+    [Parameter]
+    public EventCallback OnCancel { get; set; }
+
+    private async Task Save()
+    {
+        if (Station != null)
+        {
+            await OnSave.InvokeAsync(Station);
+        }
+    }
+
+    private async Task Cancel()
+    {
+        await OnCancel.InvokeAsync();
+    }
+}

@@ -1,0 +1,202 @@
+@page "/bus-stations"
+@inject BusStationApiService BusStationService
+@rendermode InteractiveServer
+
+<div class="container mt-4">
+    <h3>Gestión de Estaciones de Autobuses</h3>
+
+    @if (!string.IsNullOrEmpty(apiUrl))
+    {
+        <div class="alert alert-info mb-3">
+            <small>Conectando a API: <strong>@apiUrl</strong></small>
+        </div>
+    }
+
+    <button class="btn btn-primary mb-3" @onclick="ShowCreate" disabled="@isLoading">Agregar Nueva Estación</button>
+
+    @if (isLoading)
+    {
+        <div class="alert alert-info">
+            <p><em>? Cargando estaciones...</em></p>
+            <p><small>Si tarda más de 5 segundos, verifica que la API está ejecutándose en el puerto correcto.</small></p>
+        </div>
+    }
+    else if (!string.IsNullOrEmpty(errorMessage))
+    {
+        <div class="alert alert-danger mt-3" role="alert">
+            <h5>?? Error</h5>
+            <p>@errorMessage</p>
+            <button class="btn btn-sm btn-secondary" @onclick="async () => { isLoading = true; await LoadStations(); }">Reintentar</button>
+        </div>
+    }
+    else if (!stations.Any())
+    {
+        <div class="alert alert-warning">
+            <p><em>?? No hay estaciones registradas.</em></p>
+            <p>Puedes agregar una nueva estación usando el botón "Agregar Nueva Estación".</p>
+        </div>
+    }
+    else
+    {
+        <table class="table table-striped table-hover">
+            <thead class="table-dark">
+                <tr>
+                    <th>ID</th>
+                    <th>Nombre</th>
+                    <th>Ciudad</th>
+                    <th>Dirección</th>
+                    <th>Teléfono</th>
+                    <th>Creado</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var s in stations)
+                {
+                    <tr>
+                        <td>@s.Id</td>
+                        <td>@s.Name</td>
+                        <td>@s.City</td>
+                        <td>@s.Address</td>
+                        <td>@s.Phone</td>
+                        <td>@s.CreatedAt.ToLocalTime().ToString("dd/MM/yyyy HH:mm")</td>
+                        <td>
+                            <button class="btn btn-sm btn-warning me-2" @onclick="() => Edit(s)">Editar</button>
+                            <button class="btn btn-sm btn-danger" @onclick="() => Delete(s.Id)">Eliminar</button>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    }
+
+    @if (showForm)
+    {
+        <BusStationForm Station="editing" OnSave="@HandleSave" OnCancel="@HideForm" />
+    }
+</div>
+
+@code {
+    private List<BusStationResponseDto> stations = new();
+    private BusStationResponseDto? editing;
+    private bool showForm = false;
+    private bool isLoading = true;
+    private string errorMessage = string.Empty;
+    private string apiUrl = string.Empty;
+
+    protected override async Task OnInitializedAsync()
+    {
+        // Mostrar URL de la API para debugging
+        apiUrl = "https://localhost:7002/api/busstations";
+        
+        await LoadStations();
+    }
+
+    private async Task LoadStations()
+    {
+        try
+        {
+            isLoading = true;
+            errorMessage = string.Empty;
+            StateHasChanged(); // Forzar actualización de UI
+            
+            stations = await BusStationService.GetAllAsync();
+        }
+        catch (Exception ex)
+        {
+            errorMessage = $"Error al cargar estaciones: {ex.Message}. Verifica que la API esté ejecutándose en https://localhost:7002";
+        }
+        finally
+        {
+            isLoading = false;
+            StateHasChanged(); // Forzar actualización de UI
+        }
+    }
+
+    private void ShowCreate()
+    {
+        editing = new BusStationResponseDto();
+        showForm = true;
+    }
+
+    private void Edit(BusStationResponseDto station)
+    {
+        editing = new BusStationResponseDto
+        {
+            Id = station.Id,
+            Name = station.Name,
+            City = station.City,
+            Address = station.Address,
+            Phone = station.Phone,
+            CreatedAt = station.CreatedAt,
+            UpdatedAt = station.UpdatedAt
+        };
+        showForm = true;
+    }
+
+    private async Task HandleSave(BusStationResponseDto model)
+    {
+        try
+        {
+            if (model.Id == 0)
+            {
+                var createDto = new CreateBusStationDto
+                {
+                    Name = model.Name,
+                    City = model.City,
+                    Address = model.Address,
+                    Phone = model.Phone
+                };
+                await BusStationService.CreateAsync(createDto);
+            }
+            else
+            {
+                var updateDto = new UpdateBusStationDto
+                {
+                    Id = model.Id,
+                    Name = model.Name,
+                    City = model.City,
+                    Address = model.Address,
+                    Phone = model.Phone
+                };
+                await BusStationService.UpdateAsync(updateDto);
+            }
+
+            await LoadStations();
+            HideForm();
+            errorMessage = string.Empty;
+        }
+        catch (Exception ex)
+        {
+            errorMessage = $"Error al guardar: {ex.Message}";
+        }
+    }
+
+    private async Task Delete(int id)
+    {
+        if (await Confirm($"¿Estás seguro de que deseas eliminar esta estación?"))
+        {
+            try
+            {
+                await BusStationService.DeleteAsync(id);
+                await LoadStations();
+                errorMessage = string.Empty;
+            }
+            catch (Exception ex)
+            {
+                errorMessage = $"Error al eliminar: {ex.Message}";
+            }
+        }
+    }
+
+    private void HideForm()
+    {
+        showForm = false;
+        editing = null;
+    }
+
+    private async Task<bool> Confirm(string message)
+    {
+        return await Task.FromResult(true);
+    }
+}
